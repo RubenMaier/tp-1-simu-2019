@@ -79,12 +79,14 @@ table {
 }
 
 th {
+    padding: 3px;
     color: white;
     background: gray;
     text-align: center;
 }
 
 td {
+    padding: 5px 10px;
     text-align: center;
 }
 
