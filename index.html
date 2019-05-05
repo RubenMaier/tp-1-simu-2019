@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="fdp.js"></script>
+        <script type="text/javascript" src="core.js"></script>
+        <title>TP 1 Simulación 2019</title>
+    </head>
+
+    <body>
+            <section>
+                <h1>TP 1 Simulación 2019</h1>
+                <form action="#">
+                    <div class="container">
+                        <div class="input-container">
+                            <p>Q</p>
+                            <input type="number" id="Q" placeholder="¡to complete!" required>
+                        </div>
+                        <div class="input-container">
+                            <p>TPLL</p>
+                            <input type="number" id="TPLL" value="0" required>
+                        </div>
+                        <div class="input-container">
+                            <p>TCM</p>
+                            <input type="number" id="TCM" value="0" required>
+                        </div>
+                        <div class="input-container">
+                            <p>TCD</p>
+                            <input type="number" id="TCD" value="0" required>
+                        </div>
+                        <div class="input-container">
+                            <p>T</p>
+                            <input type="number" id="T" value="0" required>
+                        </div>
+                        <div class="input-container">
+                            <p>TF</p>
+                            <input type="number" id="TF" placeholder="¡to complete!" required>
+                        </div>
+                    </div>
+                    
+                    <div class="button-container">
+                        <button type="submit" id="run">RUN</button>
+                        <button onclick="location.reload();">RESTART</button>
+                    </div>
+                </form>
+                <article>
+                    <table>
+                        <tr>
+                            <th>PTOM</th>
+                            <th>PTOD</th>
+                            <th>PRTM</th>
+                            <th>PRTD</th>
+                            <th>PNR</th>
+                            <th>PT</th>
+                        </tr>
+                        <tr>
+                            <td id="PTOM">-</td>
+                            <td id="PTOD">-</td>
+                            <td id="PRTM">-</td>
+                            <td id="PRTD">-</td>
+                            <td id="PNR">-</td>
+                            <td id="PT">-</td>
+                        </tr>
+                    </table>
+                </article>
+            </section>
+            <footer><strong>grupo n1</strong> - mínima ancho soportado 646px</footer>
+    </body>
+
+</html>
