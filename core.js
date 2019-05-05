@@ -8,42 +8,49 @@ window.addEventListener("load", function() {
         if(permits) {
             permits = 0;
             const attributes = initial_conditions()
+            console.log(attributes)
             const iterate_resutls = iterate_simulation(...attributes)
-            const results = calculate_results(...iterate_resutls)
-            print_interfaces(...results)
+            console.log(iterate_resutls)
+            //const results = calculate_results(...iterate_resutls)
+            //print_interfaces(...results)
         }
     })
 })
 
-
 const initial_conditions = () => {
     const attributes = []
-
-    attributes.Q = document.getElementById('Q').innerHTML
-    attributes.TPLL = document.getElementById('TPLL').innerHTML
-    attributes.TCM = document.getElementById('TCM').innerHTML
-    attributes.TCD = document.getElementById('TCD').innerHTML
-    attributes.T = document.getElementById('T').innerHTML
-    attributes.TF = document.getElementById('TF').innerHTML
+    attributes.push(document.getElementById('q').value)
+    attributes.push(document.getElementById('TPLL').value)
+    attributes.push(document.getElementById('TCM').value)
+    attributes.push(document.getElementById('TCD').value)
+    attributes.push(document.getElementById('T').value)
+    attributes.push(document.getElementById('TF').value)
 
     return attributes
 }
 
 const iterate_simulation = (Q, TPLL, TCM, TCD, T, TF) => {
-    let { P, PT, ITOM, PTM, PTD, STOM, STOD } = 0 // variables auxiliares
+    let  
+        P = 0, 
+        PT = 0, 
+        ITOM = 0, 
+        PTM = 0, 
+        PTD = 0, 
+        STOM = 0, 
+        STOD = 0
 
-    while(!(T >= TF)) {
+    while(T < TF) {
         T = TPLL
         let IP = generate_ip()
         TPLL = T + IP
         P = P + 1
         PT = PT + 1
         if (TCM < TCD) {
-            if(P < Q) {
+            if (P < Q) {
                 IOTM = T
             } else {
                 let TFM = generate_tfm()
-                if(T < TCM) {
+                if (T < TCM) {
                     STOM = STOM + (T - ITOM)
                     TCM = T + TFM
                 } else {
@@ -54,7 +61,7 @@ const iterate_simulation = (Q, TPLL, TCM, TCD, T, TF) => {
             }
         } else {
             let TFD = generate_tfd()
-            if(T < TCD) {
+            if (T < TCD) {
                 STOD = STOD + (T - TCD)
                 TCD = T + TFD
             } else {
