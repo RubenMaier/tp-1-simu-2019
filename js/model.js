@@ -13,27 +13,34 @@ const initial_conditions = () => {
 
 const iterate_simulation = (Q, TPLL, TCM, TCD, T, TF) => {
     let  
-        P = 0, 
-        PT = 0, 
-        ITOM = 0, 
-        PTM = 0, 
-        PTD = 0, 
-        STOM = 0, 
-        STOD = 0
+        AUX = 1,
+        P = 0, // pedidos
+        PT = 0, // pedidos totales
+        ITOM = 0, // inicio de tiempo ocioso de la maquina
+        PTM = 0, // produccion total del maquina
+        PTD = 0,  // produccion total del dueño
+        STOM = 0, // sumatoria de tiempo ocioso maquina
+        STOD = 0 // sumatoria de tiempo ocioso dueño
 
     while(T < TF) {
         T = TPLL
-        let IP = generate_ip()
+        let IP = Math.round(generate_ip() + 30)
         TPLL = T + IP
         P = P + 1
         PT = PT + 1
         if (TCM < TCD) {
-            if (P < Q) {
-                IOTM = T
-            } else {
-                let TFM = generate_tfm()
-                if (T < TCM) {
+            if (AUX == 1) {
+                AUX = 0
+                ITOM = T
+            }
+            if (P >= Q) {
+                let TFM = 0;
+                for (let i=0; i < Q; i++) {
+                    TFM = TFM + Math.round(generate_tfm())
+                }
+                if (T > TCM) {
                     STOM = STOM + (T - ITOM)
+                    AUX = 1
                     TCM = T + TFM
                 } else {
                     TCM = TCM + TFM
@@ -42,8 +49,8 @@ const iterate_simulation = (Q, TPLL, TCM, TCD, T, TF) => {
                 PTM = PTM + Q
             }
         } else {
-            let TFD = generate_tfd()
-            if (T < TCD) {
+            let TFD = Math.round(generate_tfd() + 60)
+            if (T > TCD) {
                 STOD = STOD + (T - TCD)
                 TCD = T + TFD
             } else {
@@ -59,11 +66,11 @@ const iterate_simulation = (Q, TPLL, TCM, TCD, T, TF) => {
 
 const calculate_results = (T, STOD, STOM, PTM, PTD, PT, P) => {
     const 
-        PTOM = (STOM * 100) / T,
-        PTOD = (STOD * 100) / T,
-        PRTM = PTM / PT,
-        PRTD = PTD / PT,
-        PNR = P
+        PTOM = Math.round( (STOM / T) * 100 ) + " %",
+        PTOD = Math.round( (STOD / T) * 100 ) + " %",
+        PRTM = Math.round( (PTM / PT) * 100 ) + " %",
+        PRTD = Math.round( (PTD / PT) * 100 ) + " %",
+        PNR = P  + " piezas"
 
-    return [PTOM, PTOD, PRTM, PRTD, PNR, PT]
+    return [PTOM, PTOD, PRTM, PRTD, PNR, PT + " piezas"]
 }

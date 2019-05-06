@@ -1,14 +1,16 @@
 
 window.addEventListener("load", function() {
-    let permits = 1
+    console.log(generate_ip())
+    console.log(generate_tfm())
+    console.log(generate_tfd())
     document.getElementById('run').addEventListener('click', () => {
-        if(permits) {
-            permits = 0;
-            const attributes = initial_conditions()
-            const iterate_resutls = iterate_simulation(...attributes)
-            const results = calculate_results(...iterate_resutls)
-            print_interfaces(...results)
-        }
+        const attributes = initial_conditions()
+        console.log(attributes)
+        const iterate_resutls = iterate_simulation(...attributes)
+        console.log(iterate_resutls)
+        const results = calculate_results(...iterate_resutls)
+        console.log(results)
+        print_interfaces(...results)
     })
 })
 

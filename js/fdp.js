@@ -10,5 +10,5 @@ const generate_tfm = () => {
 
 const generate_tfd = () => {
     const R = Math.random();
-    return ( Math.pow( Math.E, (0.69315 * R) + 4.78749 ) )
+    return ( 15 * Math.pow( 2, R + 2 ) )
 }
