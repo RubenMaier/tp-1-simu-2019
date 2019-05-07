@@ -24,7 +24,7 @@ const iterate_simulation = (Q, TPLL, TCM, TCD, T, TF) => {
 
     while(T < TF) {
         T = TPLL
-        let IP = Math.round(generate_ip() + 30)
+        let IP = Math.round(generate_ip())
         TPLL = T + IP
         P = P + 1
         PT = PT + 1
@@ -49,7 +49,7 @@ const iterate_simulation = (Q, TPLL, TCM, TCD, T, TF) => {
                 PTM = PTM + Q
             }
         } else {
-            let TFD = Math.round(generate_tfd() + 60)
+            let TFD = Math.round(generate_tfd())
             if (T > TCD) {
                 STOD = STOD + (T - TCD)
                 TCD = T + TFD

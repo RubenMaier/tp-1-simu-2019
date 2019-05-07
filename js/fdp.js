@@ -1,6 +1,6 @@
 const generate_ip = () => {
     const R = Math.random();
-    return ( Math.pow( ( 8.21963 * R ) , 1.09643) + 5 )
+    return ( 10* (Math.pow ( R , 1.0243) + 3.5) )
 }
 
 const generate_tfm = () => {
@@ -10,5 +10,5 @@ const generate_tfm = () => {
 
 const generate_tfd = () => {
     const R = Math.random();
-    return ( 15 * Math.pow( 2, R + 2 ) )
+    return ( 5 * Math.pow( 2 , 3 - R ) * Math.pow(3 , R + 1) )
 }
