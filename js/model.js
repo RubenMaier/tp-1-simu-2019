@@ -66,11 +66,11 @@ const iterate_simulation = (Q, TPLL, TCM, TCD, T, TF) => {
 
 const calculate_results = (T, STOD, STOM, PTM, PTD, PT, P) => {
     const 
-        PTOM = Math.round( (STOM / T) * 100 ) + " %",
-        PTOD = Math.round( (STOD / T) * 100 ) + " %",
-        PRTM = Math.round( (PTM / PT) * 100 ) + " %",
-        PRTD = Math.round( (PTD / PT) * 100 ) + " %",
-        PNR = P  + " piezas"
-
-    return [PTOM, PTOD, PRTM, PRTD, PNR, PT + " piezas"]
+        PTOM = Math.round( (100*STOM) / T ) + " %", // porcentaje tiempo ocioso maquina
+        PTOD = Math.round( (100*STOD) / T ) + " %", // porcentaje tiempo ocioso dueño
+        PPM = Math.round( (30*24*60*60*PTM) / T ) + " piezas", // promedio porcentual produccion maquina
+        PPD = Math.round( (30*24*60*60*PTD) / T ) + " piezas", // promedio porcentual produccion dueño
+        PNRM = Math.round( (P*30*24*60*60) / T )  + " piezas" // produccion no realizado mensual
+    console.log(STOM, T)
+    return [PTOM, PTOD, PPM, PPD, PNRM, PT + " piezas"]
 }

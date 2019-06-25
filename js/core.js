@@ -8,11 +8,11 @@ window.addEventListener("load", function() {
     })
 })
 
-const print_interfaces = (PTOM, PTOD, PRTM, PRTD, PNR, PT) => {
+const print_interfaces = (PTOM, PTOD, PPM, PPD, PNRM, PT) => {
     document.getElementById('PTOM').innerHTML = PTOM
     document.getElementById('PTOD').innerHTML = PTOD
-    document.getElementById('PRTM').innerHTML = PRTM
-    document.getElementById('PRTD').innerHTML = PRTD
-    document.getElementById('PNR').innerHTML = PNR
-    document.getElementById('PT').innerHTML = PT
+    document.getElementById('PPM').innerHTML = PPM
+    document.getElementById('PPD').innerHTML = PPD
+    document.getElementById('PNRM').innerHTML = PNRM
+    console.log(PT)
 }
