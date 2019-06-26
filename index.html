@@ -1,72 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="css/style.css">
-        <script type="text/javascript" src="js/fdp.js"></script>
-        <script type="text/javascript" src="js/model.js"></script>
-        <script type="text/javascript" src="js/core.js"></script>
-        <title>TP 6 Simulación 2019</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/fdp.js"></script>
+    <script type="text/javascript" src="js/model.js"></script>
+    <script type="text/javascript" src="js/core.js"></script>
+    <title>TP 6 Simulación 2019</title>
+</head>
 
-    <body>
-            <section>
-                <h1>TP 6 Simulación 2019 - Grupo 1</h1>
-                <form action="#">
-                    <div class="container">
-                        <div class="input-container">
-                            <p>Q</p>
-                            <input type="number" id="q" placeholder="¡to complete!" required>
-                        </div>
-                        <div class="input-container">
-                            <p>TPLL</p>
-                            <input type="number" id="TPLL" placeholder="¡to complete!" value="0" required>
-                        </div>
-                        <div class="input-container">
-                            <p>TCM</p>
-                            <input type="number" id="TCM" placeholder="¡to complete!" value="0" required>
-                        </div>
-                        <div class="input-container">
-                            <p>TCD</p>
-                            <input type="number" id="TCD" placeholder="¡to complete!" value="0" required>
-                        </div>
-                        <div class="input-container">
-                            <p>T</p>
-                            <input type="number" id="T" placeholder="¡to complete!" value="0" required>
-                        </div>
-                        <div class="input-container">
-                            <p>TF</p>
-                            <input type="number" id="TF" placeholder="¡to complete!" value="157680000" required>
-                        </div>
-                    </div>
-                    
-                    <div class="button-container">
-                        <button type="submit" id="run">RUN</button>
-                        <button onclick="location.reload();">RESTART</button>
-                    </div>
-                </form>
-                <article style="overflow-x:auto;">
-                    <table>
-                        <tr>
-                            <th>Porcentaje tiempo ocioso maquina (PTOM)</th>
-                            <th>Porcentaje tiempo ocioso dueño (PTOD)</th>
-                            <th>Promedio produccion maquina mensual (PPM)</th>
-                            <th>Promedio produccion dueño mensual (PPD)</th>
-                            <th>Promedio pedidos no realizados (PNRM)</th>
-                        </tr>
-                        <tr>
-                            <td id="PTOM">-</td>
-                            <td id="PTOD">-</td>
-                            <td id="PPM">-</td>
-                            <td id="PPD">-</td>
-                            <td id="PNRM">-</td>
-                        </tr>
-                    </table>
-                </article>
-            </section>
-    </body>
+<body>
+    <section>
+        <h1>TP 6 Simulación 2019 - Grupo 1</h1>
+        <form action="#">
+            <div class="container">
+                <div class="input-container">
+                    <p>Q</p>
+                    <input type="number" id="q" placeholder="¡to complete!" required>
+                </div>
+                <div class="input-container">
+                    <p>TPLL</p>
+                    <input type="number" id="TPLL" placeholder="¡to complete!" value="0" required>
+                </div>
+                <div class="input-container">
+                    <p>TCM</p>
+                    <input type="number" id="TCM" placeholder="¡to complete!" value="0" required>
+                </div>
+                <div class="input-container">
+                    <p>TCD</p>
+                    <input type="number" id="TCD" placeholder="¡to complete!" value="0" required>
+                </div>
+                <div class="input-container">
+                    <p>T</p>
+                    <input type="number" id="T" placeholder="¡to complete!" value="0" required>
+                </div>
+                <div class="input-container">
+                    <p>TF</p>
+                    <input type="number" id="TF" placeholder="¡to complete!" value="157680000" required>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button type="submit" id="run">RUN</button>
+                <button onclick="location.reload();">RESTART</button>
+            </div>
+        </form>
+        <article style="overflow-x:auto;">
+            <table>
+                <tr>
+                    <th>Porcentaje tiempo ocioso maquina (PTOM)</th>
+                    <th>Porcentaje tiempo ocioso dueño (PTOD)</th>
+                    <th>Promedio produccion maquina mensual (PPM)</th>
+                    <th>Promedio produccion dueño mensual (PPD)</th>
+                    <th>Promedio pedidos no realizados (PNRM)</th>
+                </tr>
+                <tr>
+                    <td id="PTOM">-</td>
+                    <td id="PTOD">-</td>
+                    <td id="PPM">-</td>
+                    <td id="PPD">-</td>
+                    <td id="PNRM">-</td>
+                </tr>
+            </table>
+        </article>
+    </section>
+</body>
 
 </html>
